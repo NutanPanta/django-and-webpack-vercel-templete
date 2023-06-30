@@ -66,7 +66,7 @@ class Dev(Configuration):
         },
     ]
 
-    WSGI_APPLICATION = "core.wsgi.application"
+    WSGI_APPLICATION = "core.wsgi.app"
 
     DATABASES = {
         "default": {

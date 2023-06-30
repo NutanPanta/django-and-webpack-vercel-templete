@@ -104,7 +104,11 @@ class Dev(Configuration):
 
     STATIC_URL = "static/"
 
-    STATIC_ROOT = BASE_DIR / "staticfiles"
+    # STATIC_ROOT = BASE_DIR / "staticfiles"
+
+    STATICFILES_DIRS = os.path.join(BASE_DIR, "static")
+
+    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build", "static")
 
     DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
@@ -136,42 +140,42 @@ class Dev(Configuration):
         },
     }
 
-    # LOGGING = {
-    #     "version": 1,
-    #     "disable_existing_loggers": False,
-    #     "formatters": {
-    #         "verbose": {
-    #             "format": "[{asctime}s] PID: {process:d} [{levelname}s] {message}s",
-    #             "style": "{",
-    #         },
-    #         "simple": {
-    #             "format": "[{asctime}s] PID: {process:d} [{levelname}s] {message}s",
-    #             "style": "{",
-    #         },
-    #     },
-    #     "handlers": {
-    #         "file": {
-    #             "level": "DEBUG",
-    #             "class": "logging.FileHandler",
-    #             "filename": os.getenv("DJANGO_LOG_PATH"),
-    #         },
-    #         "console": {
-    #             "class": "logging.StreamHandler",
-    #         },
-    #     },
-    #     "loggers": {
-    #         "django": {
-    #             "handlers": ["console"],
-    #             "level": os.getenv("DJANGO_LOG_LEVEL").upper(),
-    #             "propagate": True,
-    #             "formatter": "verbose",
-    #         },
-    #         "django.db.backends": {
-    #             "handlers": ["console"],
-    #             "level": "INFO",
-    #         },
-    #     },
-    # }
+    LOGGING = {
+        "version": 1,
+        "disable_existing_loggers": False,
+        "formatters": {
+            "verbose": {
+                "format": "[{asctime}s] PID: {process:d} [{levelname}s] {message}s",
+                "style": "{",
+            },
+            "simple": {
+                "format": "[{asctime}s] PID: {process:d} [{levelname}s] {message}s",
+                "style": "{",
+            },
+        },
+        "handlers": {
+            "file": {
+                "level": "DEBUG",
+                "class": "logging.FileHandler",
+                "filename": os.getenv("DJANGO_LOG_PATH"),
+            },
+            "console": {
+                "class": "logging.StreamHandler",
+            },
+        },
+        "loggers": {
+            "django": {
+                "handlers": ["console"],
+                "level": os.getenv("DJANGO_LOG_LEVEL").upper(),
+                "propagate": True,
+                "formatter": "verbose",
+            },
+            "django.db.backends": {
+                "handlers": ["console"],
+                "level": "INFO",
+            },
+        },
+    }
 
     MEDIA_ROOT = os.path.join(BASE_DIR, "media")
     MEDIA_URL = "/media/"
@@ -180,35 +184,35 @@ class Dev(Configuration):
 class Prod(Dev):
     DEBUG = False
 
-    # LOGGING = {
-    #     "version": 1,
-    #     "disable_existing_loggers": False,
-    #     "formatters": {
-    #         "verbose": {
-    #             "format": "[{asctime}s] PID: {process:d} [{levelname}s] {message}s",
-    #             "style": "{",
-    #         },
-    #         "simple": {
-    #             "format": "[{asctime}s] PID: {process:d} [{levelname}s] {message}s",
-    #             "style": "{",
-    #         },
-    #     },
-    #     "handlers": {
-    #         "file": {
-    #             "level": "DEBUG",
-    #             "class": "logging.FileHandler",
-    #             "filename": os.getenv("DJANGO_LOG_PATH"),
-    #         },
-    #         "console": {
-    #             "class": "logging.StreamHandler",
-    #         },
-    #     },
-    #     "loggers": {
-    #         "django": {
-    #             "handlers": ["file"],
-    #             "level": os.getenv("DJANGO_LOG_LEVEL").upper(),
-    #             "propagate": True,
-    #             "formatter": "verbose",
-    #         },
-    #     },
-    # }
+    LOGGING = {
+        "version": 1,
+        "disable_existing_loggers": False,
+        "formatters": {
+            "verbose": {
+                "format": "[{asctime}s] PID: {process:d} [{levelname}s] {message}s",
+                "style": "{",
+            },
+            "simple": {
+                "format": "[{asctime}s] PID: {process:d} [{levelname}s] {message}s",
+                "style": "{",
+            },
+        },
+        "handlers": {
+            "file": {
+                "level": "DEBUG",
+                "class": "logging.FileHandler",
+                "filename": os.getenv("DJANGO_LOG_PATH"),
+            },
+            "console": {
+                "class": "logging.StreamHandler",
+            },
+        },
+        "loggers": {
+            "django": {
+                "handlers": ["file"],
+                "level": os.getenv("DJANGO_LOG_LEVEL").upper(),
+                "propagate": True,
+                "formatter": "verbose",
+            },
+        },
+    }

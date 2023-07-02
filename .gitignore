@@ -175,3 +175,14 @@ cython_debug/
 
 # End of https://www.toptal.com/developers/gitignore/api/django
 .vercel
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+
+**/*.backup.*
+**/*.back.*
+dist
+node_modules

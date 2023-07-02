@@ -26,6 +26,8 @@ class Dev(Configuration):
 
     CSRF_TRUSTED_ORIGINS = os.getenv("CSRF_TRUSTED_ORIGINS", "").split(";")
 
+    AUTH_USER_MODEL = "custom_user.User"
+
     INSTALLED_APPS = [
         "django.contrib.admin",
         "django.contrib.auth",
@@ -34,7 +36,7 @@ class Dev(Configuration):
         "django.contrib.messages",
         "django.contrib.staticfiles",
         "corsheaders",
-        "rest_framework",
+        "custom_user"
     ]
 
     MIDDLEWARE = [
@@ -109,34 +111,6 @@ class Dev(Configuration):
     STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build", "static")
 
     DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-    REST_FRAMEWORK = {
-        "DEFAULT_PERMISSION_CLASSES": [
-            "rest_framework.permissions.IsAuthenticated",
-        ],
-        "DEFAULT_AUTHENTICATION_CLASSES": [
-            "django_cognito_jwt.JSONWebTokenAuthentication"
-        ],
-        "DEFAULT_RENDERER_CLASSES": [
-            "rest_framework.renderers.JSONRenderer",
-        ],
-        "DEFAULT_PARSER_CLASSES": [
-            "rest_framework.parsers.JSONParser",
-            "rest_framework.parsers.FormParser",
-            "rest_framework.parsers.MultiPartParser",
-        ],
-        "DEFAULT_VERSIONING_CLASS": "rest_framework.versioning.NamespaceVersioning",
-        "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
-        "PAGE_SIZE": 20,
-        "TEST_REQUEST_DEFAULT_FORMAT": "json",
-        "DEFAULT_THROTTLE_CLASSES": [
-            "rest_framework.throttling.ScopedRateThrottle",
-        ],
-        "DEFAULT_THROTTLE_RATES": {
-            "sync": "1/min",
-            "contact_us": "3/hour",
-        },
-    }
 
     # LOGGING = {
     #     "version": 1,

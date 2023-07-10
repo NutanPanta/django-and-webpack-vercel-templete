@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build-css": "webpack --config webpack.config.js"
+    "build": "yes | webpack --config webpack.config.js --stats-error-details --stats-children"
   },
   "dependencies": {
     "bootstrap": "^5.3.0",

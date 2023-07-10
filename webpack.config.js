@@ -1,24 +1,19 @@
 const path = require('path');
 
 module.exports = {
-  mode:'production',
+  mode: 'production',
   target: 'web',
-  entry: './static/css/styles.scss',
+  entry: './src/index.js',
   output: {
-    filename: 'styles.css',
-    path: path.resolve(__dirname, 'static/dist'),
+    filename: 'index.js',
+    path: path.resolve(__dirname, 'static/js'),
   },
   module: {
     rules: [
       {
         test: /\.s[ac]ss$/i,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-        ],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },
 };
-

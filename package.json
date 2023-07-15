@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "build": "yes | webpack --config webpack.config.js --stats-error-details --stats-children",
-    "build:dev": "yes | webpack --config webpack.config.js --stats-error-details --stats-children --watch"
+    "build": "yes | webpack --config webpack.prod.js --stats-error-details --stats-children",
+    "build:dev": "yes | webpack --config webpack.dev.js --stats-error-details --stats-children --watch"
   },
   "dependencies": {
     "@fontsource/poppins": "^5.0.5",
@@ -22,6 +22,7 @@
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
     "webpack": "^5.88.1",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-merge": "^5.9.0"
   }
 }

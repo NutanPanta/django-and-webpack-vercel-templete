@@ -5,8 +5,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  mode: 'production',
-  target: 'web',
   entry: './src/index.js',
   module: {
     rules: [
@@ -46,11 +44,5 @@ module.exports = {
       '@assets': path.resolve(__dirname, 'src/assets/'),
       '@': path.resolve(__dirname, 'src/'),
     },
-  },
-  output: {
-    filename: '[name].bundle.js',
-    assetModuleFilename: 'images/[hash][ext][query]',
-    path: path.resolve(__dirname, 'staticfiles', 'static'),
-    // clean: true,
   },
 };

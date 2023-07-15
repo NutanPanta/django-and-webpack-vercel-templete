@@ -186,3 +186,4 @@ cython_debug/
 **/*.back.*
 dist
 node_modules
+static

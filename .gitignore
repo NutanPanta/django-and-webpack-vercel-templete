@@ -187,3 +187,4 @@ cython_debug/
 dist
 node_modules
 static
+staticfiles

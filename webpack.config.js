@@ -50,7 +50,7 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     assetModuleFilename: 'images/[hash][ext][query]',
-    path: path.resolve(__dirname, 'static', 'static'),
+    path: path.resolve(__dirname, 'staticfiles'),
     // clean: true,
   },
 };

@@ -51,6 +51,6 @@ module.exports = {
     filename: '[name].bundle.js',
     assetModuleFilename: 'images/[hash][ext][query]',
     path: path.resolve(__dirname, 'static'),
-    clean: true,
+    // clean: true,
   },
 };

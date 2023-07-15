@@ -1,5 +1,5 @@
 // bootstrap
-// import 'bootstrap';
+import 'bootstrap';
 
 // fonts
 import '@fontsource/poppins';

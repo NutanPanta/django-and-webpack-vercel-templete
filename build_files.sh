@@ -1,4 +1,4 @@
 pip install -r requirements.txt
-# npm install
-# npm run build
+npm install
 python3 manage.py collectstatic
+npm run build

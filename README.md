@@ -1,1 +1,1 @@
-# luxury_tour_in_nepal
+# django-and-webpack-vercel-templete

@@ -1,5 +1,5 @@
 """
-ASGI config for luxury_tour_in_nepal project.
+ASGI config for template project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 

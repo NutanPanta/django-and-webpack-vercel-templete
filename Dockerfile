@@ -2,7 +2,7 @@
 FROM node:17-alpine AS builder
 
 # Add a work directory
-WORKDIR /opt/luxury_tour_in_nepal
+WORKDIR /opt/template
 
 # Cache and Install dependencies
 COPY package.json .
@@ -24,7 +24,7 @@ RUN npm run build
 
 FROM python:3.8-buster
 
-RUN mkdir -p /var/log/luxury_tour_in_nepal
+RUN mkdir -p /var/log/template
 
 COPY requirements.txt .
 

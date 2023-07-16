@@ -33,7 +33,7 @@ module.exports = merge(common, {
   output: {
     filename: '[name].bundle.js',
     assetModuleFilename: 'images/[hash][ext][query]',
-    path: path.resolve(__dirname, 'staticfiles'),
+    path: path.resolve(__dirname, 'staticfiles', 'static'),
     // clean: true,
   },
 });
